@@ -4,168 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santa Cruz Doughnut Economics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f5f6f8;
+            --bg: #f8f9fc;
             --bg-card: #ffffff;
-            --text: #1a1d21;
+            --text: #111827;
             --text-muted: #6b7280;
             --text-faint: #9ca3af;
             --border: #e5e7eb;
-            --accent: #3d8b37;
-            --accent-dark: #2d6a28;
-            --header-from: #1a2f0e;
-            --header-to: #3d8b37;
+            --accent: #059669;
+            --accent-light: #d1fae5;
+            --accent-dark: #047857;
+            --header-from: #064e3b;
+            --header-to: #059669;
             --panel-bg: #ffffff;
             --metric-bg: #f9fafb;
-            --shadow: 0 1px 3px rgba(0,0,0,0.08);
-            --shadow-lg: 0 4px 16px rgba(0,0,0,0.1);
+            --shadow: 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.08);
+            --radius: 12px;
         }
         html.dark {
-            --bg: #0f1117;
-            --bg-card: #1a1d27;
+            --bg: #0c0f1a;
+            --bg-card: #151926;
             --text: #e5e7eb;
             --text-muted: #9ca3af;
             --text-faint: #6b7280;
-            --border: #2a2d3a;
-            --accent: #4ade80;
-            --accent-dark: #22c55e;
-            --header-from: #0a0f05;
-            --header-to: #1a3a12;
-            --panel-bg: #1a1d27;
-            --metric-bg: #12141c;
+            --border: #1e2235;
+            --accent: #34d399;
+            --accent-light: #064e3b;
+            --accent-dark: #6ee7b7;
+            --header-from: #0a1628;
+            --header-to: #064e3b;
+            --panel-bg: #151926;
+            --metric-bg: #0f1220;
             --shadow: 0 1px 3px rgba(0,0,0,0.3);
-            --shadow-lg: 0 4px 16px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.4);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
             transition: background 0.3s, color 0.3s;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, var(--header-from) 0%, var(--header-to) 100%);
             color: white;
-            padding: 1.25rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         .header-left { display: flex; align-items: center; gap: 1rem; }
         .header-left h1 {
-            font-size: 1.35rem;
+            font-size: 1.15rem;
             font-weight: 700;
             letter-spacing: -0.02em;
         }
-        .header-left p { opacity: 0.7; font-size: 0.82rem; }
-        .header-right { display: flex; align-items: center; gap: 0.75rem; }
+        .header-left p { opacity: 0.65; font-size: 0.78rem; font-weight: 400; }
+        .header-right { display: flex; align-items: center; gap: 0.5rem; }
 
-        /* Dark mode toggle */
+        /* Header buttons */
         .theme-toggle {
-            background: rgba(255,255,255,0.12);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 2rem;
-            padding: 0.4rem 0.7rem;
-            color: white;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 0.4rem 0.65rem;
+            color: rgba(255,255,255,0.9);
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             transition: all 0.2s;
             display: flex;
             align-items: center;
-            gap: 0.35rem;
+            gap: 0.3rem;
         }
-        .theme-toggle:hover { background: rgba(255,255,255,0.2); }
+        .theme-toggle:hover { background: rgba(255,255,255,0.18); }
         .theme-icon { font-size: 1rem; line-height: 1; }
 
         /* Jurisdiction switcher */
-        .jurisdiction-switcher { display: flex; gap: 0.4rem; }
+        .jurisdiction-switcher {
+            display: flex;
+            gap: 2px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 2px;
+        }
         .jurisdiction-btn {
-            padding: 0.45rem 0.9rem;
-            border: 1.5px solid rgba(255,255,255,0.3);
-            border-radius: 2rem;
+            padding: 0.4rem 0.85rem;
+            border: none;
+            border-radius: 6px;
             background: transparent;
-            color: rgba(255,255,255,0.85);
+            color: rgba(255,255,255,0.7);
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 500;
             transition: all 0.2s ease;
             white-space: nowrap;
         }
-        .jurisdiction-btn:hover { border-color: white; background: rgba(255,255,255,0.08); color: white; }
+        .jurisdiction-btn:hover { color: white; background: rgba(255,255,255,0.08); }
         .jurisdiction-btn.active {
-            background: white;
-            color: var(--header-to);
-            border-color: white;
+            background: rgba(255,255,255,0.18);
+            color: white;
             font-weight: 600;
         }
 
         /* Layout */
         .main-layout {
             display: grid;
-            grid-template-columns: 1fr 420px;
-            min-height: calc(100vh - 64px);
+            grid-template-columns: 1fr 380px;
+            min-height: calc(100vh - 56px);
         }
         .doughnut-section {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 2rem 1.5rem;
+            justify-content: flex-start;
+            padding: 1rem 1rem 1rem;
+            min-height: 0;
+            overflow: hidden;
         }
 
         /* Jurisdiction info */
-        .jurisdiction-info { text-align: center; margin-bottom: 1.25rem; }
+        .jurisdiction-info { text-align: center; margin-bottom: 0.5rem; }
         .jurisdiction-info h2 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--accent);
-            letter-spacing: -0.01em;
+            letter-spacing: -0.02em;
         }
         .jurisdiction-info .pop {
             color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-top: 0.15rem;
+            font-size: 0.78rem;
+            margin-top: 0.05rem;
+            font-weight: 400;
         }
         .jurisdiction-info .desc {
             color: var(--text-faint);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             max-width: 480px;
-            margin-top: 0.25rem;
-            line-height: 1.4;
+            margin: 0.1rem auto 0;
+            line-height: 1.35;
         }
 
-        /* Doughnut canvas */
-        #doughnutDiv { max-width: 640px; width: 100%; }
+        /* Doughnut canvas — fully responsive */
+        #doughnutDiv {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex: 1 1 auto;
+            min-height: 0;
+        }
+        #doughnutCanvas {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            cursor: crosshair;
+        }
         .doughnut-hint {
             text-align: center;
             color: var(--text-faint);
-            font-size: 0.8rem;
-            margin-top: 0.75rem;
+            font-size: 0.72rem;
+            margin-top: 0.25rem;
+            font-weight: 400;
+            flex-shrink: 0;
         }
 
         /* Summary strip */
         .summary-strip {
             display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.4rem;
+            margin-top: 0.35rem;
             flex-wrap: wrap;
             justify-content: center;
         }
         .summary-chip {
-            padding: 0.3rem 0.75rem;
-            border-radius: 2rem;
-            font-size: 0.72rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.02em;
         }
         .chip-good { background: #dcfce7; color: #166534; }
-        .chip-caution { background: #fef3c7; color: #92400e; }
+        .chip-caution { background: #fef9c3; color: #854d0e; }
         .chip-bad { background: #fee2e2; color: #991b1b; }
         .chip-unknown { background: var(--metric-bg); color: var(--text-faint); border: 1px solid var(--border); }
         html.dark .chip-good { background: #052e16; color: #4ade80; }
@@ -175,23 +203,24 @@
         /* Links */
         .page-links {
             display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.4rem;
+            margin-top: 0.35rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .page-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.3rem;
-            padding: 0.4rem 1rem;
+            gap: 0.25rem;
+            padding: 0.35rem 0.85rem;
             background: var(--bg-card);
             color: var(--text-muted);
             border: 1px solid var(--border);
-            border-radius: 2rem;
-            font-size: 0.78rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
             font-weight: 500;
             text-decoration: none;
             transition: all 0.2s;
-            box-shadow: var(--shadow);
         }
         .page-link:hover { color: var(--accent); border-color: var(--accent); }
 
@@ -200,7 +229,7 @@
             background: var(--panel-bg);
             border-left: 1px solid var(--border);
             overflow-y: auto;
-            max-height: calc(100vh - 64px);
+            max-height: calc(100vh - 56px);
             position: sticky;
             top: 0;
             transition: background 0.3s;
@@ -212,46 +241,46 @@
             justify-content: center;
             height: 100%;
             color: var(--text-faint);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             padding: 2.5rem;
             text-align: center;
             gap: 0.75rem;
         }
-        .detail-empty-icon { font-size: 2.5rem; opacity: 0.3; }
-        .detail-content { padding: 1.5rem; }
+        .detail-empty-icon { font-size: 2.5rem; opacity: 0.25; }
+        .detail-content { padding: 1.25rem; }
         .detail-header {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 1rem;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
         }
         .detail-ring {
             display: inline-block;
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             flex-shrink: 0;
         }
         .ring-ecological { background: #ef4444; }
         .ring-social { background: #22c55e; }
         .detail-header h3 {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
             text-transform: capitalize;
             letter-spacing: -0.01em;
         }
         .detail-status {
             display: inline-block;
-            padding: 0.2rem 0.55rem;
-            border-radius: 1rem;
-            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
             font-weight: 700;
             margin-left: auto;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
         }
         .status-good { background: #dcfce7; color: #166534; }
-        .status-caution { background: #fef3c7; color: #92400e; }
+        .status-caution { background: #fef9c3; color: #854d0e; }
         .status-bad { background: #fee2e2; color: #991b1b; }
         .status-severe { background: #ef4444; color: white; }
         .status-unknown { background: var(--metric-bg); color: var(--text-faint); border: 1px solid var(--border); }
@@ -263,79 +292,79 @@
         .detail-metric {
             background: var(--metric-bg);
             border: 1px solid var(--border);
-            border-radius: 0.75rem;
+            border-radius: var(--radius);
             padding: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
         .detail-metric .label {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             color: var(--text-faint);
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.05em;
             font-weight: 600;
         }
         .detail-metric .value {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: var(--text);
-            margin-top: 0.15rem;
-            letter-spacing: -0.01em;
+            margin-top: 0.1rem;
+            letter-spacing: -0.02em;
         }
-        .detail-metric .year { font-size: 0.75rem; color: var(--text-faint); margin-top: 0.1rem; }
-        .detail-metric .target { font-size: 0.82rem; color: #8b5cf6; margin-top: 0.3rem; font-weight: 500; }
+        .detail-metric .year { font-size: 0.72rem; color: var(--text-faint); margin-top: 0.1rem; }
+        .detail-metric .target { font-size: 0.8rem; color: #7c3aed; margin-top: 0.25rem; font-weight: 500; }
         html.dark .detail-metric .target { color: #a78bfa; }
         .detail-metric .context {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-top: 0.4rem;
+            margin-top: 0.35rem;
             line-height: 1.5;
         }
 
-        .detail-source { margin-bottom: 1rem; }
+        .detail-source { margin-bottom: 0.75rem; }
         .detail-source h4 {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             color: var(--text-faint);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.35rem;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.05em;
             font-weight: 600;
         }
         .detail-source a {
             color: #3b82f6;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             display: block;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.15rem;
             font-weight: 500;
         }
         .detail-source a:hover { text-decoration: underline; }
         .source-screenshot {
             width: 100%;
             border: 1px solid var(--border);
-            border-radius: 0.5rem;
-            margin-top: 0.5rem;
+            border-radius: 8px;
+            margin-top: 0.4rem;
             cursor: pointer;
             transition: transform 0.2s;
         }
         .source-screenshot:hover { transform: scale(1.02); }
 
-        .detail-actions { margin-top: 1rem; }
+        .detail-actions { margin-top: 0.75rem; }
         .detail-actions h4 {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             color: var(--accent);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.35rem;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.05em;
             font-weight: 700;
         }
         .detail-actions ul { list-style: none; }
         .detail-actions li {
-            padding: 0.45rem 0;
+            padding: 0.4rem 0;
             border-bottom: 1px solid var(--border);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             display: flex;
             align-items: flex-start;
-            gap: 0.5rem;
+            gap: 0.4rem;
             line-height: 1.45;
             color: var(--text-muted);
         }
@@ -359,7 +388,7 @@
             align-items: center;
         }
         .lightbox.active { display: flex; }
-        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 0.5rem; }
+        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
 
         /* Responsive */
         @media (max-width: 960px) {
@@ -370,12 +399,15 @@
                 border-top: 1px solid var(--border);
                 position: relative;
             }
-            header { padding: 1rem 1.25rem; }
-            .doughnut-section { padding: 1.5rem 1rem; }
+            header { padding: 0.75rem 1rem; }
+            .doughnut-section { padding: 0.75rem 0.75rem; }
+            .header-left h1 { font-size: 1rem; }
         }
         @media (max-width: 600px) {
             .jurisdiction-switcher { flex-wrap: wrap; }
-            .jurisdiction-btn { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
+            .jurisdiction-btn { font-size: 0.72rem; padding: 0.3rem 0.6rem; }
+            .page-links { gap: 0.3rem; }
+            .page-link { font-size: 0.7rem; padding: 0.3rem 0.6rem; }
         }
     </style>
 </head>
@@ -393,9 +425,6 @@
                 <button class="jurisdiction-btn" data-key="santa_cruz_county">Santa Cruz County</button>
                 <button class="jurisdiction-btn" data-key="watsonville">Watsonville</button>
             </div>
-            <button class="theme-toggle" onclick="AgentUI.showSettings()" title="AI Agent Settings">
-                <span class="theme-icon">&#9881;</span> <span style="font-size:0.75rem">AI</span>
-            </button>
             <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
                 <span class="theme-icon" id="themeIcon">&#9790;</span>
             </button>
@@ -419,6 +448,7 @@
                 <a href="outreach.html" class="page-link">Outreach Directory</a>
                 <a href="index-d3.html" class="page-link">D3 Visualization</a>
                 <a href="energy-deepdive.html" class="page-link">Energy Deep-Dive</a>
+                <a href="#" class="page-link" onclick="event.preventDefault(); AgentUI.showSettings()" style="opacity:0.5">AI Settings</a>
             </div>
         </div>
 
@@ -439,141 +469,5 @@
     <script src="data.js"></script>
     <script src="agent-ui.js"></script>
     <script src="app.js"></script>
-    <style>
-        /* Agent UI styles */
-        .agent-research-section {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            gap: 0.4rem;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-        .agent-btn {
-            border: none;
-            border-radius: 2rem;
-            padding: 0.45rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        .agent-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-        .agent-btn-research {
-            background: var(--accent);
-            color: white;
-        }
-        .agent-btn-research:hover:not(:disabled) { filter: brightness(1.1); }
-        .agent-btn-settings {
-            background: var(--metric-bg);
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            padding: 0.45rem 0.65rem;
-            font-size: 0.9rem;
-        }
-        .agent-btn-settings:hover { color: var(--accent); border-color: var(--accent); }
-        .agent-btn-primary { background: var(--accent); color: white; }
-        .agent-btn-primary:hover { filter: brightness(1.1); }
-        .agent-btn-secondary { background: var(--metric-bg); color: var(--text-muted); border: 1px solid var(--border); }
-        .agent-btn-secondary:hover { color: var(--text); }
-        .agent-btn-icon { font-size: 0.9rem; }
-        .agent-spinner {
-            display: inline-block;
-            width: 14px; height: 14px;
-            border: 2px solid rgba(255,255,255,0.3);
-            border-top-color: white;
-            border-radius: 50%;
-            animation: agent-spin 0.6s linear infinite;
-        }
-        @keyframes agent-spin { to { transform: rotate(360deg); } }
-        .agent-research-result { width: 100%; margin-top: 0.5rem; }
-        .agent-result-card {
-            background: var(--metric-bg);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 1rem;
-        }
-        .agent-result-header {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: var(--accent);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-        .agent-result-field {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-bottom: 0.3rem;
-            line-height: 1.45;
-        }
-        .agent-result-label {
-            display: inline-block;
-            min-width: 70px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: var(--text-faint);
-            font-weight: 600;
-            letter-spacing: 0.03em;
-        }
-        .agent-result-field a { color: #3b82f6; text-decoration: none; }
-        .agent-result-field a:hover { text-decoration: underline; }
-        .agent-result-actions {
-            list-style: none;
-            padding: 0;
-            margin: 0.2rem 0 0 70px;
-        }
-        .agent-result-actions li { font-size: 0.8rem; padding: 0.15rem 0; }
-        .agent-result-actions li::before { content: "\2192 "; color: var(--accent); }
-        .agent-result-model { font-size: 0.7rem; color: var(--text-faint); margin-top: 0.5rem; text-align: right; }
-        .agent-error {
-            background: #fef2f2;
-            color: #991b1b;
-            border: 1px solid #fecaca;
-            border-radius: 0.5rem;
-            padding: 0.6rem 0.8rem;
-            font-size: 0.82rem;
-        }
-        html.dark .agent-error { background: #450a0a; color: #fca5a5; border-color: #7f1d1d; }
-
-        /* Settings modal */
-        .agent-modal-backdrop {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); z-index: 999;
-        }
-        .agent-modal {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 1rem; padding: 1.75rem; width: 420px; max-width: 92vw;
-            z-index: 1000; box-shadow: var(--shadow-lg);
-        }
-        .agent-modal h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
-        .agent-modal-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.4; }
-        .agent-modal label {
-            display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-muted);
-            text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.75rem;
-        }
-        .agent-modal input {
-            display: block; width: 100%; margin-top: 0.25rem;
-            padding: 0.5rem 0.75rem; border: 1px solid var(--border);
-            border-radius: 0.5rem; background: var(--metric-bg); color: var(--text);
-            font-size: 0.85rem;
-        }
-        .agent-modal input:focus { outline: none; border-color: var(--accent); }
-        .agent-modal-presets {
-            display: flex; gap: 0.4rem; margin-bottom: 1rem;
-        }
-        .agent-preset {
-            padding: 0.25rem 0.65rem; border-radius: 1rem; font-size: 0.72rem;
-            font-weight: 600; background: var(--metric-bg); border: 1px solid var(--border);
-            color: var(--text-muted); cursor: pointer; transition: all 0.2s;
-        }
-        .agent-preset:hover { border-color: var(--accent); color: var(--accent); }
-        .agent-modal-actions { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 0.5rem; }
-    </style>
 </body>
 </html>

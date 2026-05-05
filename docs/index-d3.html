@@ -205,6 +205,29 @@
         .sub-indicator .val { font-weight: 600; }
 
         /* Energy deep-dive link */
+        .page-links {
+            display: flex;
+            gap: 0.4rem;
+            margin-top: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .page-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.35rem 0.85rem;
+            background: white;
+            color: #636e72;
+            border: 1px solid #dfe6e9;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .page-link:hover { color: #2d5016; border-color: #2d5016; }
+
         .energy-deepdive {
             display: block;
             margin-top: 1rem;
@@ -253,6 +276,12 @@
             </div>
             <div id="doughnutContainer"></div>
             <div class="doughnut-hint">Hover for details • Click to expand • Keyboard 1-9 to switch cities</div>
+            <div class="page-links">
+                <a href="index.html" class="page-link">&larr; Classic View</a>
+                <a href="research.html" class="page-link">Data Gap Analysis</a>
+                <a href="outreach.html" class="page-link">Outreach Directory</a>
+                <a href="energy-deepdive.html" class="page-link">Energy Deep-Dive</a>
+            </div>
             <div class="legend">
                 <div class="legend-item"><div class="legend-swatch" style="background:#4a8c1c"></div> Under control</div>
                 <div class="legend-item"><div class="legend-swatch" style="background:#a8d65c"></div> On track</div>

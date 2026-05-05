@@ -69,6 +69,17 @@ function updateSummaryStrip(data) {
     `;
 }
 
+// --- Dynamic doughnut sizing ---
+function getDoughnutSize() {
+    const container = document.getElementById('doughnutDiv');
+    const availW = container.clientWidth;
+    // Leave room for header (~56px), info (~60px), hint+chips+links (~90px)
+    const availH = window.innerHeight - 210;
+    const size = Math.min(availW, availH);
+    // Clamp between 320 and 800, use devicePixelRatio for crisp rendering
+    return Math.max(320, Math.min(size, 800));
+}
+
 // --- Load doughnut ---
 function loadDoughnut(jurisdictionKey) {
     currentJurisdiction = jurisdictionKey;
@@ -85,8 +96,10 @@ function loadDoughnut(jurisdictionKey) {
         btn.classList.toggle('active', btn.dataset.key === jurisdictionKey);
     });
 
-    // Recreate doughnut fresh each time (library's clearDoughnut has confirm dialog)
-    myDonut = new Doughnut(640, 1.0, 14, "doughnutCanvas", "doughnutDiv", null, null, null, null);
+    // Dynamic size based on container width
+    const size = getDoughnutSize();
+    const textSize = Math.max(10, Math.round(14 * (size / 640)));
+    myDonut = new Doughnut(size, 1.0, textSize, "doughnutCanvas", "doughnutDiv", null, null, null, null);
 
     // Set global/local type (colored red gradient for overshoot)
     myDonut.setColours(2, 1, "#883251", "#E096C6");
@@ -177,10 +190,6 @@ function showDetail(dimType, dimName) {
         html += '</div>';
     }
 
-    // AI Research button
-    const cityName = currentData.name.replace(/^City of /, '');
-    const stateName = 'California'; // TODO: make dynamic for non-CA cities
-    html += AgentUI.renderResearchButton(data.name, data.ring, cityName, stateName);
 
     content.innerHTML = html;
     document.getElementById('detailEmpty').style.display = 'none';
@@ -229,3 +238,10 @@ document.addEventListener('keydown', (e) => {
 // Initialize
 loadDoughnut('city_santa_cruz');
 setupClickInterceptor();
+
+// Resize doughnut on window resize (debounced)
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => loadDoughnut(currentJurisdiction), 200);
+});

@@ -12,3 +12,10 @@ node_modules/
 *.swp
 *.swo
 *~
+
+# Loose working files at repo root (large PDFs, screenshots)
+/*.pdf
+/Screenshot*.png
+
+# Sibling project with its own git history
+/ca-doughnut/

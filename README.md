@@ -4,7 +4,7 @@ Interactive visualizations of social foundations and ecological ceilings for cit
 
 ## Live Demo
 
-Open `frontend/index-d3.html` in a browser — no build step needed.
+Open `docs/index-d3.html` in a browser — no build step needed.
 
 ## Cities Included
 
@@ -27,13 +27,18 @@ Open `frontend/index-d3.html` in a browser — no build step needed.
 ## Project Structure
 
 ```
-├── frontend/
+├── docs/                      # Website (GitHub Pages) + reference docs
 │   ├── index-d3.html          # Main D3.js interactive visualization
 │   ├── d3-doughnut.js         # D3.js doughnut chart component
 │   ├── data.js                # All city data (Santa Cruz jurisdictions)
+│   ├── admin.html             # Spreadsheet admin UI for editing data
 │   ├── energy-deepdive.html   # Energy dimension deep-dive (→ microgridme.xyz)
 │   ├── index.html             # Legacy Canvas-based visualization
-│   └── app.js                 # Legacy app logic
+│   ├── app.js                 # Legacy app logic
+│   ├── adding-a-city.md       # Guide to add new cities
+│   ├── doughnut-economics-framework.md
+│   ├── city-portrait-methodology.md
+│   └── santa-cruz-context.md
 ├── data/
 │   ├── schema.json            # JSON Schema for city portraits
 │   └── portland_or.json       # Portland, OR portrait data
@@ -42,11 +47,6 @@ Open `frontend/index-d3.html` in a browser — no build step needed.
 │   ├── research-agent.js      # AI-powered data collection
 │   ├── schema.js              # Data schema definitions
 │   └── package.json
-├── docs/
-│   ├── adding-a-city.md       # Guide to add new cities
-│   ├── doughnut-economics-framework.md
-│   ├── city-portrait-methodology.md
-│   └── santa-cruz-context.md
 └── sources/                   # Source document screenshots
 ```
 
@@ -55,7 +55,7 @@ Open `frontend/index-d3.html` in a browser — no build step needed.
 ### View the visualization
 ```bash
 # Just open in a browser — no build step needed
-open frontend/index-d3.html
+open docs/index-d3.html
 ```
 
 ### Add a new city (AI-powered)

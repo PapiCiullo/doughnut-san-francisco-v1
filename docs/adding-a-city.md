@@ -131,7 +131,7 @@ Before publishing a city portrait:
 ## Adding to the Frontend
 
 1. Add your JSON file to `data/`
-2. In `frontend/data.js`, add your city to the `JURISDICTIONS` object
+2. In `docs/data.js`, add your city to the `JURISDICTIONS` object
 3. The city selector buttons auto-generate from JURISDICTIONS keys
 
 ## Contributing
