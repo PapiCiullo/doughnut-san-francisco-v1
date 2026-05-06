@@ -435,23 +435,26 @@ class Doughnut {
     }
 
     _drawDoughnut() {
-        let adjust = this._donutLineSize / 2;
-        this._ctx.lineWidth = this._donutLineSize;
-        this._ctx.strokeStyle = this._donutFrosting;
-        // Inside line
-        this._ctx.beginPath();
-        this._ctx.arc(this._middleX, this._middleY, this._inDonut + adjust, 0, 2 * Math.PI);
-        this._ctx.stroke();
-        // Outside line
-        this._ctx.beginPath();
-        this._ctx.arc(this._middleX, this._middleY, this._outDonut - adjust, 0, 2 * Math.PI);
-        this._ctx.stroke();
+        this._drawDoughnutBorders();
         // Fill in between the lines
         this._ctx.strokeStyle = this._donutFilling;
         this._ctx.beginPath();
         this._ctx.lineWidth = this._outDonut - this._inDonut - this._donutLineSize * 2;
         let middle = (this._outDonut - this._inDonut) / 2;
         this._ctx.arc(this._middleX, this._middleY, this._inDonut + middle, 0, 2 * Math.PI);
+        this._ctx.stroke();
+        this._ctx.lineWidth = 1;
+    }
+
+    _drawDoughnutBorders() {
+        let adjust = this._donutLineSize / 2;
+        this._ctx.lineWidth = this._donutLineSize;
+        this._ctx.strokeStyle = this._donutFrosting;
+        this._ctx.beginPath();
+        this._ctx.arc(this._middleX, this._middleY, this._inDonut + adjust, 0, 2 * Math.PI);
+        this._ctx.stroke();
+        this._ctx.beginPath();
+        this._ctx.arc(this._middleX, this._middleY, this._outDonut - adjust, 0, 2 * Math.PI);
         this._ctx.stroke();
         this._ctx.lineWidth = 1;
     }
@@ -717,6 +720,9 @@ class Doughnut {
         this._drawDoughnut();
         this._drawOuterDimensions();
         this._drawInnerDimensions();
+        // Re-stroke the doughnut's dark-green borders so they stay continuous,
+        // regardless of how the dim bars overlap the doughnut zone.
+        this._drawDoughnutBorders();
         this._drawLimits();
         this._drawLabels();
         this._ctx.fillStyle = "black";
