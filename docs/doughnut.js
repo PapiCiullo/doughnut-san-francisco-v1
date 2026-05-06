@@ -597,22 +597,19 @@ class Doughnut {
                         col = "lightgray";
                     }
                     if (type == INNER) {
-                        if (val < 0) { 
-                            // Negative value
+                        if (val < 0) {
+                            // Below shortfall threshold — leave doughnut intact
                             inner = extMax;
-                            // Double negative is positive!
-                            outer = extMax - (val * intScale);
-                            col = "white"
+                            outer = extMax;
                         } else {
                             inner = extMin + ((this._normalDonutLevelRadius - val) * extScale);
                             outer = extMax;
                         }
                     } else {
-                        if (val < 0) { 
-                            // Negative value
-                            inner = extMin + (val * intScale);
+                        if (val < 0) {
+                            // Within ecological ceiling — leave doughnut intact
+                            inner = extMin;
                             outer = extMin;
-                            col = "white"
                         } else {
                             inner = extMin;
                             outer = extMin + (val * extScale);
