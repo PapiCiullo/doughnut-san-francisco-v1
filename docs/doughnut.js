@@ -598,18 +598,26 @@ class Doughnut {
                     }
                     if (type == INNER) {
                         if (val < 0) {
-                            // Below shortfall threshold — leave doughnut intact
-                            inner = extMax;
+                            // Above social-foundation target — small green bump
+                            // inside the inner ring (does not touch the doughnut).
+                            const ringW = extMax - extMin;
+                            const bump = Math.min(Math.abs(val) * extScale * 0.25, ringW * 0.4);
                             outer = extMax;
+                            inner = extMax - bump;
+                            col = this._donutFilling;
                         } else {
                             inner = extMin + ((this._normalDonutLevelRadius - val) * extScale);
                             outer = extMax;
                         }
                     } else {
                         if (val < 0) {
-                            // Within ecological ceiling — leave doughnut intact
+                            // Under ecological ceiling — small green bump inside
+                            // the outer ring (does not touch the doughnut).
+                            const ringW = extMax - extMin;
+                            const bump = Math.min(Math.abs(val) * extScale * 0.25, ringW * 0.4);
                             inner = extMin;
-                            outer = extMin;
+                            outer = extMin + bump;
+                            col = this._donutFilling;
                         } else {
                             inner = extMin;
                             outer = extMin + (val * extScale);
