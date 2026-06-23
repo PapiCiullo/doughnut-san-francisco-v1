@@ -1055,7 +1055,7 @@ const JURISDICTIONS = {
                 ]
             }
         ]
-    }
+    },
     "city_san_francisco": {
         name: "City of San Francisco",
         population: "~808,000",
