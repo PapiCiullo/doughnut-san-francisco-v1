@@ -1,5 +1,5 @@
 // App state
-let currentJurisdiction = "city_santa_cruz";
+let currentJurisdiction = "city_san_francisco";
 let myDonut = null;
 let currentData = null;
 
@@ -236,7 +236,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Initialize
-loadDoughnut('city_santa_cruz');
+loadDoughnut('city_san_francisco');
 setupClickInterceptor();
 
 // Resize doughnut on window resize (debounced)
