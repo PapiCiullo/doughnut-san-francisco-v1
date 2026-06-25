@@ -284,6 +284,384 @@ const JURISDICTIONS = {
             }
         ]
     },
+     "soma_sf": {
+        name: "SoMa",
+        population: "~30,000",
+        description: "SoMa (South of Market) is a vibrant, densely populated San Francisco district covering about 3 square miles with a significant weekday influx of professionals.",
+        ecological: [
+            {
+                name: "climate change",
+                level: 50,
+                indicator: "Total GHG emissions",
+                value: "160,622 MT CO2e (~3.04/capita est.)",
+                year: 2017,
+                target: "Net-negative by 2030 (aspirational); 80% below 1990 (legal)",
+                context: "Transportation 53%, Natural Gas 28%, Electricity 11%, Solid Waste 8%. 100% carbon-free electricity since 2018 via 3CE. 21.7% reduction achieved.",
+                source: "City of Watsonville CAAP 2030",
+                sourceUrl: "https://www.watsonville.gov/DocumentCenter/View/17209/CAAP-2030-Executive-Summary-",
+                screenshot: "img/watsonville_emissions_targets.png",
+                actions: [
+                    "Switch to electric vehicles — transportation is 53% of emissions",
+                    "Electrify home heating (replace gas furnaces and water heaters)",
+                    "Upgrade to 3CE Prime for 100% renewable electricity",
+                    "Compost food waste — solid waste is 8% of emissions",
+                    "Support Watsonville's Climate Action & Adaptation Plan"
+                ]
+            },
+            {
+                name: "ocean acidification",
+                level: 50,
+                indicator: "Coastal impacts",
+                value: "Regional monitoring",
+                year: 2024,
+                target: "Maintain marine ecosystem health",
+                context: "Watsonville coast and Pajaro River estuary affected by agricultural runoff and ocean acidification.",
+                source: "MBARI",
+                sourceUrl: "https://www.mbari.org/",
+                screenshot: null,
+                actions: ["Reduce carbon footprint", "Reduce agricultural runoff"]
+            },
+            {
+                name: "chemical pollution",
+                level: 150,
+                indicator: "Pesticide use",
+                value: "Epicenter of county's ~1M lbs/year",
+                year: 2022,
+                target: "Reduce fumigant use; protect farmworkers",
+                context: "Watsonville IS the center of pesticide use in the county. 67% fumigant gases. Strawberry and lettuce farming. CalEnviroScreen flags south county as high pesticide exposure. Major environmental justice concern.",
+                source: "CA DPR; CalEnviroScreen",
+                sourceUrl: "https://www.cdpr.ca.gov/wp-content/uploads/2024/12/2022_santa_cruz_commodity.pdf",
+                screenshot: "img/pesticide_use_report_2022.png",
+                actions: [
+                    "Support farmworker health organizations (e.g., COPA)",
+                    "Buy organic strawberries and produce",
+                    "Advocate for buffer zones around schools and homes",
+                    "Support transition to organic/regenerative agriculture",
+                    "Push for stricter fumigant regulations"
+                ]
+            },
+            {
+                name: "nitrogen & phosphorus loading",
+                level: 150,
+                indicator: "Groundwater nitrate",
+                value: "87% from agriculture — severe",
+                year: 2015,
+                target: "Below 10 mg/L NO3-N",
+                context: "Watsonville sits in the heart of Pajaro Valley — the most contaminated area. Drinking water directly from Pajaro Valley groundwater. Seawater intrusion compounding the problem.",
+                source: "Pajaro Valley Water Management Agency",
+                sourceUrl: "https://www.pvwater.org/",
+                screenshot: null,
+                actions: [
+                    "Support PVWMA recycled water and recharge projects",
+                    "Advocate for agricultural nutrient management",
+                    "Support drinking water treatment upgrades"
+                ]
+            },
+            {
+                name: "freshwater withdrawals",
+                level: 100,
+                indicator: "Groundwater overdraft",
+                value: "Critically overdrafted basin",
+                year: 2024,
+                target: "Sustainable groundwater management (SGMA)",
+                context: "Pajaro Valley basin is critically overdrafted. Seawater intrusion advancing inland. Watsonville's water supply is directly threatened.",
+                source: "PVWMA",
+                sourceUrl: "https://www.pvwater.org/",
+                screenshot: null,
+                actions: ["Conserve water aggressively", "Support recycled water projects", "Support managed aquifer recharge"]
+            },
+            {
+                name: "land conversion",
+                level: 100,
+                indicator: "Protected parkland",
+                value: "~2.2% of city (143 acres in 26 parks)",
+                year: 2024,
+                target: "Increase protected open space",
+                context: "Very low compared to county (32%) and City of Santa Cruz (~20%). Agricultural land dominates. Watsonville Slough system is ecologically significant.",
+                source: "City of Watsonville Parks & Recreation",
+                sourceUrl: "https://www.watsonville.gov/1207/City-Parks",
+                screenshot: null,
+                actions: [
+                    "Support expansion of parks and open space",
+                    "Protect Watsonville Slough ecosystem",
+                    "Advocate for community gardens and green spaces"
+                ]
+            },
+            {
+                name: "biodiversity loss",
+                level: 50,
+                indicator: "Habitat health",
+                value: "Watsonville Slough at risk",
+                year: 2024,
+                target: "Restore and protect slough ecosystem",
+                context: "Watsonville Slough system is critical habitat. Agricultural practices and development pressure threaten local biodiversity. Less protected land than rest of county.",
+                source: "Watsonville Wetlands Watch",
+                sourceUrl: "https://www.watsonvillewetlandswatch.org/",
+                screenshot: null,
+                actions: ["Volunteer with Watsonville Wetlands Watch", "Support slough restoration", "Report pollution"]
+            },
+            {
+                name: "air pollution",
+                level: 0,
+                indicator: "PM2.5 annual average",
+                value: "~7-9 \u00b5g/m\u00b3 (est.)",
+                year: 2019,
+                target: "WHO 2021 guideline: 5 \u00b5g/m\u00b3",
+                context: "No city-specific monitor. Inland location and agricultural dust/fumigants may contribute. Meets EPA standard but exceeds revised WHO guideline.",
+                source: "IQAir; DataShare SCC",
+                sourceUrl: "https://www.iqair.com/us/usa/california/watsonville",
+                screenshot: null,
+                actions: ["Support air quality monitoring in Watsonville", "Advocate for reduced fumigant use"]
+            },
+            {
+                name: "ozone layer depletion",
+                level: -100,
+                indicator: "Stratospheric ozone",
+                value: "Recovering globally",
+                year: 2024,
+                target: "Full recovery ~2066",
+                context: "Global issue, recovering due to Montreal Protocol.",
+                source: "NOAA",
+                sourceUrl: "https://www.epa.gov/ozone-layer-protection",
+                screenshot: null,
+                actions: ["Properly dispose of old refrigerants"]
+            },
+            {
+                name: "waste & materials",
+                level: 50,
+                indicator: "Solid waste & diversion",
+                value: "City-specific diversion rate not published",
+                year: 2024,
+                target: "Extend landfill life; meet SB 1383 organics targets",
+                context: "Watsonville operates its own landfill and waste collection — one of the first US cities to implement mixed recyclable collection. Solid waste = 8% of city GHG (2017). SB 1383 organics collection now required. City goal: extend landfill life through recycling.",
+                source: "City of Watsonville Solid Waste Division",
+                sourceUrl: "https://www.watsonville.gov/1180/Solid-Waste-Division",
+                screenshot: null,
+                actions: [
+                    "Use the green bin for food scraps (SB 1383)",
+                    "Recycle correctly — Watsonville pioneered mixed-stream collection",
+                    "Reduce single-use plastics, especially from agricultural packaging",
+                    "Repair, reuse, and donate to extend landfill life"
+                ]
+            }
+        ],
+        social: [
+            {
+                name: "food",
+                level: 100,
+                indicator: "Food insecurity rate",
+                value: "Higher than county avg (~1 in 3)",
+                year: 2025,
+                target: "Zero hunger",
+                context: "County-wide: ~93,000 residents at risk of food insecurity (~40,900 households). Watsonville has largest SNAP gap — high proportion qualifying but not enrolled. Agricultural community paradox: grows food but can't afford it. Second Harvest serves 70K+/month.",
+                source: "Blum Center / UCSC; Second Harvest Food Bank",
+                sourceUrl: "https://news.ucsc.edu/2019/11/blum-foodinsecurity.html",
+                screenshot: null,
+                actions: [
+                    "Donate to Second Harvest Food Bank",
+                    "Support CalFresh enrollment in Watsonville",
+                    "Advocate for farmworker food access programs",
+                    "Support community gardens and food sovereignty initiatives"
+                ]
+            },
+            {
+                name: "health",
+                level: 100,
+                indicator: "Uninsured rate",
+                value: "9.8% uninsured",
+                year: 2023,
+                target: "Universal coverage",
+                context: "Uninsured rate 9.8% — 2.6x the City of Santa Cruz rate (3.7%). Up from 9.5% in 2022. Driven by farmworker and undocumented community. Salud Para La Gente is primary FQHC. Medicaid cuts threaten further increases.",
+                source: "Census ACS via Data USA",
+                sourceUrl: "https://datausa.io/profile/geo/watsonville-ca/",
+                screenshot: null,
+                actions: [
+                    "Support Salud Para La Gente community health center",
+                    "Help neighbors enroll in Medi-Cal and Covered California",
+                    "Advocate against Medicaid funding cuts",
+                    "Support mobile health clinics serving farmworkers"
+                ]
+            },
+            {
+                name: "education",
+                level: 75,
+                indicator: "HS graduation rate",
+                value: "79% (PVUSD district avg)",
+                year: 2024,
+                target: "Match or exceed state average (87%)",
+                context: "PVUSD graduation rate 79% — below CA average of 87%. Math proficiency 17% (vs 49% in SC city). Reading proficiency 27% (vs 68% in SC city). 90% minority enrollment. 54.9% economically disadvantaged. Ceiba College Prep: >95%.",
+                source: "Public School Review; CA Dept of Education",
+                sourceUrl: "https://www.publicschoolreview.com/california/watsonville/high",
+                screenshot: null,
+                actions: [
+                    "Volunteer as a tutor at PVUSD schools",
+                    "Support Ceiba College Prep and similar models",
+                    "Advocate for equitable school funding",
+                    "Support bilingual education programs"
+                ]
+            },
+            {
+                name: "income & work",
+                level: 100,
+                indicator: "Poverty rate",
+                value: "15.1% poverty; median income $74,785",
+                year: 2023,
+                target: "Below 10%; living wage for all",
+                context: "Median household income $74,785 — $36K less than SC city ($111,427). 15.1% below poverty line. 12.8% of families in poverty. Agricultural/service sector economy. High cost of living with lower wages than north county.",
+                source: "U.S. Census Bureau ACS 5-year",
+                sourceUrl: "https://www.census.gov/quickfacts/fact/table/watsonvillecitycalifornia/HSG010223",
+                screenshot: null,
+                actions: [
+                    "Support living wage campaigns",
+                    "Advocate for farmworker labor protections",
+                    "Support workforce development and job training",
+                    "Buy from locally owned Watsonville businesses"
+                ]
+            },
+            {
+                name: "housing",
+                level: 100,
+                indicator: "Housing cost burden",
+                value: "Severe — rising homelessness",
+                year: 2024,
+                target: "Affordable housing for all; <30% rent burden",
+                context: "Affordable housing rent limits: $1,627 (studio) to $2,510 (4BR). Market rate likely higher. Rising homelessness with smaller budget and fewer staff than SC city. No dedicated homelessness department. 20.4% decline in county-wide homelessness reported.",
+                source: "City of Watsonville Housing Program; Santa Cruz Local",
+                sourceUrl: "https://santacruzlocal.org/2024/03/26/rising-homelessness-in-watsonville-prompts-new-strategies/",
+                screenshot: null,
+                actions: [
+                    "Advocate for Watsonville homelessness department/coordinator",
+                    "Support affordable housing development",
+                    "Volunteer with local shelter programs",
+                    "Push for farmworker housing investments"
+                ]
+            },
+            {
+                name: "water & sanitation",
+                level: 100,
+                indicator: "Nitrate in drinking water",
+                value: "Contaminated groundwater source",
+                year: 2024,
+                target: "Below 10 mg/L NO3-N in all wells",
+                context: "Watsonville drinks from Pajaro Valley groundwater — severely contaminated with nitrate (87% from agriculture). Seawater intrusion advancing. Chromium-6 also detected. PVWMA managing critically overdrafted basin.",
+                source: "PVWMA; State Water Board",
+                sourceUrl: "https://www.pvwater.org/",
+                screenshot: null,
+                actions: [
+                    "Support PVWMA groundwater sustainability efforts",
+                    "Advocate for agricultural best management practices",
+                    "Support drinking water treatment upgrades",
+                    "Check your water quality report"
+                ]
+            },
+            {
+                name: "energy",
+                level: 0,
+                indicator: "Electricity cost & renewables",
+                value: "100% carbon-free electricity via 3CE",
+                year: 2024,
+                target: "100% renewable; affordable rates",
+                context: "Watsonville has had 100% carbon-free electricity since 2018 via 3 Clean Energy (3CE). However, energy burden for low-income households remains a concern given lower median income ($74K vs $111K in SC city).",
+                source: "City of Watsonville CAAP 2030; 3CE",
+                sourceUrl: "https://3ce.org/",
+                screenshot: null,
+                actions: [
+                    "Apply for CARE/FERA low-income rate discounts",
+                    "Support solar installation programs for low-income homes",
+                    "Electrify home heating to leverage clean grid"
+                ]
+            },
+            {
+                name: "social equity",
+                level: 100,
+                indicator: "Environmental justice",
+                value: "CalEnviroScreen flagged; Gini ~0.50",
+                year: 2021,
+                target: "Environmental and economic equity",
+                context: "CalEnviroScreen flags south county as high pesticide exposure and pollution burden. County Gini 0.50 (severe inequality). Watsonville disproportionately bears county's environmental costs while having lower incomes.",
+                source: "CalEnviroScreen; Census ACS",
+                sourceUrl: "https://oehha.ca.gov/calenviroscreen",
+                screenshot: null,
+                actions: [
+                    "Support environmental justice organizations (COPA, APEN)",
+                    "Advocate for equitable distribution of environmental burdens",
+                    "Push for buffer zones between pesticide application and communities",
+                    "Support community air monitoring"
+                ]
+            },
+            {
+                name: "peace & justice",
+                level: 50,
+                indicator: "Crime rate trend",
+                value: "5.9 violent / 18.6 property per 1,000",
+                year: 2024,
+                target: "Below national average",
+                context: "302 violent crimes, 959 property crimes. Violent crime 58.5% above national avg. But 23% overall decline in 2024 vs 2023. 33% decline since 2020. 4-year improving trend. Property crime 4.8% below national avg.",
+                source: "Watsonville PD; NeighborhoodScout",
+                sourceUrl: "https://www.watsonville.gov/CivicAlerts.aspx?AID=2431",
+                screenshot: null,
+                actions: [
+                    "Support community-based violence prevention",
+                    "Engage with Watsonville PD community programs",
+                    "Support youth programs and after-school activities",
+                    "Advocate for restorative justice"
+                ]
+            },
+            {
+                name: "political voice",
+                level: 25,
+                indicator: "Voter participation",
+                value: "County: 81.8% (city-level TBD)",
+                year: 2024,
+                target: "Above 70% in general elections",
+                context: "County-wide turnout 81.8% (Nov 2024). Watsonville city-level data not yet disaggregated — historically lower turnout in south county. Nov 2024 election filled 3 city council seats (Districts 1, 2, 6).",
+                source: "Santa Cruz County Elections; City of Watsonville",
+                sourceUrl: "https://www.watsonville.gov/2506/November-5-2024-Election",
+                screenshot: null,
+                actions: [
+                    "Register to vote and encourage neighbors",
+                    "Attend Watsonville City Council meetings",
+                    "Support voter registration drives in farmworker communities",
+                    "Run for local office or join a commission"
+                ]
+            },
+            {
+                name: "gender equality",
+                level: 50,
+                indicator: "Gender pay ratio (est.)",
+                value: "~0.85 (county-level estimate)",
+                year: 2024,
+                target: "Pay equity (1:1 ratio)",
+                context: "No Watsonville-specific data. County ratio 0.85. CA statewide: women earn 89.9% of men (2023 BLS). Agricultural/service sector workforce may have wider gap. Needs local research.",
+                source: "CA Civil Rights Dept; BLS",
+                sourceUrl: "https://calcivilrights.ca.gov/2024/03/12/on-equal-pay-day-civil-rights-department-releases-new-findings-on-pay-gaps-in-california/",
+                screenshot: null,
+                actions: [
+                    "Support pay transparency",
+                    "Advocate for farmworker labor protections for women",
+                    "Support women-owned businesses in Watsonville"
+                ]
+            },
+            {
+                name: "networks",
+                level: 50,
+                indicator: "Broadband access",
+                value: "Significant digital divide",
+                year: 2024,
+                target: "Universal broadband access",
+                context: "County has 15,745 students without broadband (C- grade). Equal Access Santa Cruz provides subsidized internet via Cruzio/PVUSD partnership. Buena Vista Labor Camp: 160 families connected. Digital literacy and device access also barriers.",
+                source: "CA Broadband Report Card; Equal Access SC; Patch",
+                sourceUrl: "https://patch.com/california/watsonville/digital-divide-how-wide-watsonville-area",
+                screenshot: null,
+                actions: [
+                    "Support Equal Access Santa Cruz County",
+                    "Donate devices to community programs",
+                    "Advocate for broadband infrastructure in south county",
+                    "Support digital literacy programs at PVUSD"
+                ]
+            }
+        ]
+    },
     "city_santa_cruz": {
         name: "City of Santa Cruz",
         population: "~65,000",
@@ -957,384 +1335,6 @@ const JURISDICTIONS = {
                 sourceUrl: "https://equalaccesssantacruz.com/",
                 screenshot: null,
                 actions: ["Support Equal Access Santa Cruz", "Advocate for municipal broadband", "Donate devices"]
-            }
-        ]
-    },
-    "watsonville": {
-        name: "City of Watsonville",
-        population: "~53,000",
-        description: "Heart of Pajaro Valley agriculture. Majority-Latino community. Severe pesticide exposure and groundwater contamination.",
-        ecological: [
-            {
-                name: "climate change",
-                level: 50,
-                indicator: "Total GHG emissions",
-                value: "160,622 MT CO2e (~3.04/capita est.)",
-                year: 2017,
-                target: "Net-negative by 2030 (aspirational); 80% below 1990 (legal)",
-                context: "Transportation 53%, Natural Gas 28%, Electricity 11%, Solid Waste 8%. 100% carbon-free electricity since 2018 via 3CE. 21.7% reduction achieved.",
-                source: "City of Watsonville CAAP 2030",
-                sourceUrl: "https://www.watsonville.gov/DocumentCenter/View/17209/CAAP-2030-Executive-Summary-",
-                screenshot: "img/watsonville_emissions_targets.png",
-                actions: [
-                    "Switch to electric vehicles — transportation is 53% of emissions",
-                    "Electrify home heating (replace gas furnaces and water heaters)",
-                    "Upgrade to 3CE Prime for 100% renewable electricity",
-                    "Compost food waste — solid waste is 8% of emissions",
-                    "Support Watsonville's Climate Action & Adaptation Plan"
-                ]
-            },
-            {
-                name: "ocean acidification",
-                level: 50,
-                indicator: "Coastal impacts",
-                value: "Regional monitoring",
-                year: 2024,
-                target: "Maintain marine ecosystem health",
-                context: "Watsonville coast and Pajaro River estuary affected by agricultural runoff and ocean acidification.",
-                source: "MBARI",
-                sourceUrl: "https://www.mbari.org/",
-                screenshot: null,
-                actions: ["Reduce carbon footprint", "Reduce agricultural runoff"]
-            },
-            {
-                name: "chemical pollution",
-                level: 150,
-                indicator: "Pesticide use",
-                value: "Epicenter of county's ~1M lbs/year",
-                year: 2022,
-                target: "Reduce fumigant use; protect farmworkers",
-                context: "Watsonville IS the center of pesticide use in the county. 67% fumigant gases. Strawberry and lettuce farming. CalEnviroScreen flags south county as high pesticide exposure. Major environmental justice concern.",
-                source: "CA DPR; CalEnviroScreen",
-                sourceUrl: "https://www.cdpr.ca.gov/wp-content/uploads/2024/12/2022_santa_cruz_commodity.pdf",
-                screenshot: "img/pesticide_use_report_2022.png",
-                actions: [
-                    "Support farmworker health organizations (e.g., COPA)",
-                    "Buy organic strawberries and produce",
-                    "Advocate for buffer zones around schools and homes",
-                    "Support transition to organic/regenerative agriculture",
-                    "Push for stricter fumigant regulations"
-                ]
-            },
-            {
-                name: "nitrogen & phosphorus loading",
-                level: 150,
-                indicator: "Groundwater nitrate",
-                value: "87% from agriculture — severe",
-                year: 2015,
-                target: "Below 10 mg/L NO3-N",
-                context: "Watsonville sits in the heart of Pajaro Valley — the most contaminated area. Drinking water directly from Pajaro Valley groundwater. Seawater intrusion compounding the problem.",
-                source: "Pajaro Valley Water Management Agency",
-                sourceUrl: "https://www.pvwater.org/",
-                screenshot: null,
-                actions: [
-                    "Support PVWMA recycled water and recharge projects",
-                    "Advocate for agricultural nutrient management",
-                    "Support drinking water treatment upgrades"
-                ]
-            },
-            {
-                name: "freshwater withdrawals",
-                level: 100,
-                indicator: "Groundwater overdraft",
-                value: "Critically overdrafted basin",
-                year: 2024,
-                target: "Sustainable groundwater management (SGMA)",
-                context: "Pajaro Valley basin is critically overdrafted. Seawater intrusion advancing inland. Watsonville's water supply is directly threatened.",
-                source: "PVWMA",
-                sourceUrl: "https://www.pvwater.org/",
-                screenshot: null,
-                actions: ["Conserve water aggressively", "Support recycled water projects", "Support managed aquifer recharge"]
-            },
-            {
-                name: "land conversion",
-                level: 100,
-                indicator: "Protected parkland",
-                value: "~2.2% of city (143 acres in 26 parks)",
-                year: 2024,
-                target: "Increase protected open space",
-                context: "Very low compared to county (32%) and City of Santa Cruz (~20%). Agricultural land dominates. Watsonville Slough system is ecologically significant.",
-                source: "City of Watsonville Parks & Recreation",
-                sourceUrl: "https://www.watsonville.gov/1207/City-Parks",
-                screenshot: null,
-                actions: [
-                    "Support expansion of parks and open space",
-                    "Protect Watsonville Slough ecosystem",
-                    "Advocate for community gardens and green spaces"
-                ]
-            },
-            {
-                name: "biodiversity loss",
-                level: 50,
-                indicator: "Habitat health",
-                value: "Watsonville Slough at risk",
-                year: 2024,
-                target: "Restore and protect slough ecosystem",
-                context: "Watsonville Slough system is critical habitat. Agricultural practices and development pressure threaten local biodiversity. Less protected land than rest of county.",
-                source: "Watsonville Wetlands Watch",
-                sourceUrl: "https://www.watsonvillewetlandswatch.org/",
-                screenshot: null,
-                actions: ["Volunteer with Watsonville Wetlands Watch", "Support slough restoration", "Report pollution"]
-            },
-            {
-                name: "air pollution",
-                level: 0,
-                indicator: "PM2.5 annual average",
-                value: "~7-9 \u00b5g/m\u00b3 (est.)",
-                year: 2019,
-                target: "WHO 2021 guideline: 5 \u00b5g/m\u00b3",
-                context: "No city-specific monitor. Inland location and agricultural dust/fumigants may contribute. Meets EPA standard but exceeds revised WHO guideline.",
-                source: "IQAir; DataShare SCC",
-                sourceUrl: "https://www.iqair.com/us/usa/california/watsonville",
-                screenshot: null,
-                actions: ["Support air quality monitoring in Watsonville", "Advocate for reduced fumigant use"]
-            },
-            {
-                name: "ozone layer depletion",
-                level: -100,
-                indicator: "Stratospheric ozone",
-                value: "Recovering globally",
-                year: 2024,
-                target: "Full recovery ~2066",
-                context: "Global issue, recovering due to Montreal Protocol.",
-                source: "NOAA",
-                sourceUrl: "https://www.epa.gov/ozone-layer-protection",
-                screenshot: null,
-                actions: ["Properly dispose of old refrigerants"]
-            },
-            {
-                name: "waste & materials",
-                level: 50,
-                indicator: "Solid waste & diversion",
-                value: "City-specific diversion rate not published",
-                year: 2024,
-                target: "Extend landfill life; meet SB 1383 organics targets",
-                context: "Watsonville operates its own landfill and waste collection — one of the first US cities to implement mixed recyclable collection. Solid waste = 8% of city GHG (2017). SB 1383 organics collection now required. City goal: extend landfill life through recycling.",
-                source: "City of Watsonville Solid Waste Division",
-                sourceUrl: "https://www.watsonville.gov/1180/Solid-Waste-Division",
-                screenshot: null,
-                actions: [
-                    "Use the green bin for food scraps (SB 1383)",
-                    "Recycle correctly — Watsonville pioneered mixed-stream collection",
-                    "Reduce single-use plastics, especially from agricultural packaging",
-                    "Repair, reuse, and donate to extend landfill life"
-                ]
-            }
-        ],
-        social: [
-            {
-                name: "food",
-                level: 100,
-                indicator: "Food insecurity rate",
-                value: "Higher than county avg (~1 in 3)",
-                year: 2025,
-                target: "Zero hunger",
-                context: "County-wide: ~93,000 residents at risk of food insecurity (~40,900 households). Watsonville has largest SNAP gap — high proportion qualifying but not enrolled. Agricultural community paradox: grows food but can't afford it. Second Harvest serves 70K+/month.",
-                source: "Blum Center / UCSC; Second Harvest Food Bank",
-                sourceUrl: "https://news.ucsc.edu/2019/11/blum-foodinsecurity.html",
-                screenshot: null,
-                actions: [
-                    "Donate to Second Harvest Food Bank",
-                    "Support CalFresh enrollment in Watsonville",
-                    "Advocate for farmworker food access programs",
-                    "Support community gardens and food sovereignty initiatives"
-                ]
-            },
-            {
-                name: "health",
-                level: 100,
-                indicator: "Uninsured rate",
-                value: "9.8% uninsured",
-                year: 2023,
-                target: "Universal coverage",
-                context: "Uninsured rate 9.8% — 2.6x the City of Santa Cruz rate (3.7%). Up from 9.5% in 2022. Driven by farmworker and undocumented community. Salud Para La Gente is primary FQHC. Medicaid cuts threaten further increases.",
-                source: "Census ACS via Data USA",
-                sourceUrl: "https://datausa.io/profile/geo/watsonville-ca/",
-                screenshot: null,
-                actions: [
-                    "Support Salud Para La Gente community health center",
-                    "Help neighbors enroll in Medi-Cal and Covered California",
-                    "Advocate against Medicaid funding cuts",
-                    "Support mobile health clinics serving farmworkers"
-                ]
-            },
-            {
-                name: "education",
-                level: 75,
-                indicator: "HS graduation rate",
-                value: "79% (PVUSD district avg)",
-                year: 2024,
-                target: "Match or exceed state average (87%)",
-                context: "PVUSD graduation rate 79% — below CA average of 87%. Math proficiency 17% (vs 49% in SC city). Reading proficiency 27% (vs 68% in SC city). 90% minority enrollment. 54.9% economically disadvantaged. Ceiba College Prep: >95%.",
-                source: "Public School Review; CA Dept of Education",
-                sourceUrl: "https://www.publicschoolreview.com/california/watsonville/high",
-                screenshot: null,
-                actions: [
-                    "Volunteer as a tutor at PVUSD schools",
-                    "Support Ceiba College Prep and similar models",
-                    "Advocate for equitable school funding",
-                    "Support bilingual education programs"
-                ]
-            },
-            {
-                name: "income & work",
-                level: 100,
-                indicator: "Poverty rate",
-                value: "15.1% poverty; median income $74,785",
-                year: 2023,
-                target: "Below 10%; living wage for all",
-                context: "Median household income $74,785 — $36K less than SC city ($111,427). 15.1% below poverty line. 12.8% of families in poverty. Agricultural/service sector economy. High cost of living with lower wages than north county.",
-                source: "U.S. Census Bureau ACS 5-year",
-                sourceUrl: "https://www.census.gov/quickfacts/fact/table/watsonvillecitycalifornia/HSG010223",
-                screenshot: null,
-                actions: [
-                    "Support living wage campaigns",
-                    "Advocate for farmworker labor protections",
-                    "Support workforce development and job training",
-                    "Buy from locally owned Watsonville businesses"
-                ]
-            },
-            {
-                name: "housing",
-                level: 100,
-                indicator: "Housing cost burden",
-                value: "Severe — rising homelessness",
-                year: 2024,
-                target: "Affordable housing for all; <30% rent burden",
-                context: "Affordable housing rent limits: $1,627 (studio) to $2,510 (4BR). Market rate likely higher. Rising homelessness with smaller budget and fewer staff than SC city. No dedicated homelessness department. 20.4% decline in county-wide homelessness reported.",
-                source: "City of Watsonville Housing Program; Santa Cruz Local",
-                sourceUrl: "https://santacruzlocal.org/2024/03/26/rising-homelessness-in-watsonville-prompts-new-strategies/",
-                screenshot: null,
-                actions: [
-                    "Advocate for Watsonville homelessness department/coordinator",
-                    "Support affordable housing development",
-                    "Volunteer with local shelter programs",
-                    "Push for farmworker housing investments"
-                ]
-            },
-            {
-                name: "water & sanitation",
-                level: 100,
-                indicator: "Nitrate in drinking water",
-                value: "Contaminated groundwater source",
-                year: 2024,
-                target: "Below 10 mg/L NO3-N in all wells",
-                context: "Watsonville drinks from Pajaro Valley groundwater — severely contaminated with nitrate (87% from agriculture). Seawater intrusion advancing. Chromium-6 also detected. PVWMA managing critically overdrafted basin.",
-                source: "PVWMA; State Water Board",
-                sourceUrl: "https://www.pvwater.org/",
-                screenshot: null,
-                actions: [
-                    "Support PVWMA groundwater sustainability efforts",
-                    "Advocate for agricultural best management practices",
-                    "Support drinking water treatment upgrades",
-                    "Check your water quality report"
-                ]
-            },
-            {
-                name: "energy",
-                level: 0,
-                indicator: "Electricity cost & renewables",
-                value: "100% carbon-free electricity via 3CE",
-                year: 2024,
-                target: "100% renewable; affordable rates",
-                context: "Watsonville has had 100% carbon-free electricity since 2018 via 3 Clean Energy (3CE). However, energy burden for low-income households remains a concern given lower median income ($74K vs $111K in SC city).",
-                source: "City of Watsonville CAAP 2030; 3CE",
-                sourceUrl: "https://3ce.org/",
-                screenshot: null,
-                actions: [
-                    "Apply for CARE/FERA low-income rate discounts",
-                    "Support solar installation programs for low-income homes",
-                    "Electrify home heating to leverage clean grid"
-                ]
-            },
-            {
-                name: "social equity",
-                level: 100,
-                indicator: "Environmental justice",
-                value: "CalEnviroScreen flagged; Gini ~0.50",
-                year: 2021,
-                target: "Environmental and economic equity",
-                context: "CalEnviroScreen flags south county as high pesticide exposure and pollution burden. County Gini 0.50 (severe inequality). Watsonville disproportionately bears county's environmental costs while having lower incomes.",
-                source: "CalEnviroScreen; Census ACS",
-                sourceUrl: "https://oehha.ca.gov/calenviroscreen",
-                screenshot: null,
-                actions: [
-                    "Support environmental justice organizations (COPA, APEN)",
-                    "Advocate for equitable distribution of environmental burdens",
-                    "Push for buffer zones between pesticide application and communities",
-                    "Support community air monitoring"
-                ]
-            },
-            {
-                name: "peace & justice",
-                level: 50,
-                indicator: "Crime rate trend",
-                value: "5.9 violent / 18.6 property per 1,000",
-                year: 2024,
-                target: "Below national average",
-                context: "302 violent crimes, 959 property crimes. Violent crime 58.5% above national avg. But 23% overall decline in 2024 vs 2023. 33% decline since 2020. 4-year improving trend. Property crime 4.8% below national avg.",
-                source: "Watsonville PD; NeighborhoodScout",
-                sourceUrl: "https://www.watsonville.gov/CivicAlerts.aspx?AID=2431",
-                screenshot: null,
-                actions: [
-                    "Support community-based violence prevention",
-                    "Engage with Watsonville PD community programs",
-                    "Support youth programs and after-school activities",
-                    "Advocate for restorative justice"
-                ]
-            },
-            {
-                name: "political voice",
-                level: 25,
-                indicator: "Voter participation",
-                value: "County: 81.8% (city-level TBD)",
-                year: 2024,
-                target: "Above 70% in general elections",
-                context: "County-wide turnout 81.8% (Nov 2024). Watsonville city-level data not yet disaggregated — historically lower turnout in south county. Nov 2024 election filled 3 city council seats (Districts 1, 2, 6).",
-                source: "Santa Cruz County Elections; City of Watsonville",
-                sourceUrl: "https://www.watsonville.gov/2506/November-5-2024-Election",
-                screenshot: null,
-                actions: [
-                    "Register to vote and encourage neighbors",
-                    "Attend Watsonville City Council meetings",
-                    "Support voter registration drives in farmworker communities",
-                    "Run for local office or join a commission"
-                ]
-            },
-            {
-                name: "gender equality",
-                level: 50,
-                indicator: "Gender pay ratio (est.)",
-                value: "~0.85 (county-level estimate)",
-                year: 2024,
-                target: "Pay equity (1:1 ratio)",
-                context: "No Watsonville-specific data. County ratio 0.85. CA statewide: women earn 89.9% of men (2023 BLS). Agricultural/service sector workforce may have wider gap. Needs local research.",
-                source: "CA Civil Rights Dept; BLS",
-                sourceUrl: "https://calcivilrights.ca.gov/2024/03/12/on-equal-pay-day-civil-rights-department-releases-new-findings-on-pay-gaps-in-california/",
-                screenshot: null,
-                actions: [
-                    "Support pay transparency",
-                    "Advocate for farmworker labor protections for women",
-                    "Support women-owned businesses in Watsonville"
-                ]
-            },
-            {
-                name: "networks",
-                level: 50,
-                indicator: "Broadband access",
-                value: "Significant digital divide",
-                year: 2024,
-                target: "Universal broadband access",
-                context: "County has 15,745 students without broadband (C- grade). Equal Access Santa Cruz provides subsidized internet via Cruzio/PVUSD partnership. Buena Vista Labor Camp: 160 families connected. Digital literacy and device access also barriers.",
-                source: "CA Broadband Report Card; Equal Access SC; Patch",
-                sourceUrl: "https://patch.com/california/watsonville/digital-divide-how-wide-watsonville-area",
-                screenshot: null,
-                actions: [
-                    "Support Equal Access Santa Cruz County",
-                    "Donate devices to community programs",
-                    "Advocate for broadband infrastructure in south county",
-                    "Support digital literacy programs at PVUSD"
-                ]
             }
         ]
     }
